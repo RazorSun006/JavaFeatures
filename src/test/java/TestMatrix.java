@@ -27,6 +27,7 @@ public class TestMatrix {
             }
             System.out.println();
         }
+        System.out.println("ssh without ssr ");
     }
 
     private boolean ifSameResultArray(int[][] result, int[][] result2) {
