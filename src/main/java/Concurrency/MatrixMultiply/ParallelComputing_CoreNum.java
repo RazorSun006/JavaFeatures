@@ -7,7 +7,7 @@ public class ParallelComputing_CoreNum implements ComputingMatrix {
     @Override
     public void compute(int[][] matrixA, int[][] matrixB, int rowA, int rowB, int columnB, int[][] result) {
         /*  int numThreads = Runtime.getRuntime().availableProcessors();*/
-        int numThreads = 6;
+        int numThreads = 12;
         System.out.println("numThreads = " + numThreads);
         List<Thread> threads = new ArrayList<>();
         for (int i = 0; i < numThreads; i++) {

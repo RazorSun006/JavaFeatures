@@ -20,30 +20,18 @@ public class MatrixMultiply {
         this.computingMatrix = computingMatrix;
     }
 
-    public void multiply() {
-      /*  display(matrixA);
-        System.out.println();
-        display(matrixB);
-        System.out.println();*/
+    public int[][] multiply() {
         long startTime = System.nanoTime();
         if (columnA != rowB) {
-            return;
+            System.out.println("  wrong input ! ");
+            return new int[1][1];
         }
         int[][] result = new int[rowA][columnB];
-        computingMatrix.compute(matrixA, matrixB, rowA, rowB, columnB,result);
+        computingMatrix.compute(matrixA, matrixB, rowA, rowB, columnB, result);
         long endTime = System.nanoTime();
         System.out.println(endTime - startTime + " ns ");
         System.out.println((endTime - startTime) / 1000000 + " ms ");
         System.out.println();
-        display(result);
-    }
-
-    private void display(int[][] result) {
-        for (int[] ints : result) {
-            for (int j = 0; j < result[0].length; j++) {
-                System.out.printf("%8d", ints[j]);
-            }
-            System.out.println();
-        }
+        return result;
     }
 }
