@@ -8,13 +8,11 @@ public class TestMatrix {
         CreateTestMatrix createMatrix = new CreateTestMatrix();
         int[][] matrixA = createMatrix.create(240, 100000);
         int[][] matrixB = createMatrix.create(100000, 60);
-
         ComputingMatrix computingMatrix = new SerialComputing();
         MatrixMultiply matrixMultiply = new
                 MatrixMultiply(matrixA, matrixB, computingMatrix);
         int[][] result = matrixMultiply.multiply();
         System.out.println("++++++++++++++++++++++++");
-
         ComputingMatrix computingMatrix2 = new ParallelComputing_CoreNum();
         MatrixMultiply matrixMultiply2 = new
                 MatrixMultiply(matrixA, matrixB, computingMatrix2);
@@ -23,7 +21,6 @@ public class TestMatrix {
     }
 
     private void display(int[][] result) {
-
         for (int[] ints : result) {
             for (int j = 0; j < result[0].length; j++) {
                 System.out.printf("%8d", ints[j]);
