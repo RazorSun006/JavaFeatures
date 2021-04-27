@@ -21,10 +21,10 @@ public class MatrixMultiply {
     }
 
     public void multiply() {
-   /*     display(matrixA);
+        display(matrixA);
         System.out.println();
         display(matrixB);
-        System.out.println();*/
+        System.out.println();
         long startTime = System.nanoTime();
         if (columnA != rowB) {
             return;
@@ -35,7 +35,7 @@ public class MatrixMultiply {
         System.out.println(endTime - startTime + " ns ");
         System.out.println((endTime - startTime) / 1000000 + " ms ");
         System.out.println();
-      /*  display(result);*/
+        display(result);
     }
 
     private void display(int[][] result) {

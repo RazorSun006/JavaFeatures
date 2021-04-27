@@ -1,13 +1,20 @@
 package Concurrency.MatrixMultiply;
 
-public class ParallelComputing_CoreNum implements ComputingMatrix{
+import java.util.ArrayList;
+import java.util.List;
+
+public class ParallelComputing_CoreNum implements ComputingMatrix {
     @Override
     public void compute(int[][] matrixA, int[][] matrixB, int rowA, int rowB, int columnB, int[][] result) {
-        int numThreads=Runtime.getRuntime().availableProcessors();
-        for (int i=0; i<numThreads; i++) {
-            CoreNums task = new CoreNums(rowB,rowA,columnB,result,matrixA,matrixA);
+        /*  int numThreads = Runtime.getRuntime().availableProcessors();*/
+        int numThreads = 6;
+        System.out.println("numThreads = " + numThreads);
+        List<Thread> threads = new ArrayList<>();
+        for (int i = 0; i < numThreads; i++) {
+            CoreNums task = new CoreNums(result, matrixA, matrixB, numThreads, i);
             Thread thread = new Thread(task);
             thread.start();
+            threads.add(thread);
         }
         System.out.println(" the execution time of ParallelComputing_CoreNum version ");
     }

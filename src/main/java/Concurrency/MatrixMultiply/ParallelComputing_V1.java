@@ -1,8 +1,6 @@
 package Concurrency.MatrixMultiply;
 
 public class ParallelComputing_V1 implements ComputingMatrix{
-
-
     @Override
     public void compute(int[][] matrixA, int[][] matrixB, int rowA, int rowB, int columnB, int[][] result) {
         for (int i = 0; i < rowA; i++) {

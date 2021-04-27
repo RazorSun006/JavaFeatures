@@ -4,11 +4,20 @@ import org.testng.annotations.Test;
 
 public class TestMatrix {
     @Test
-    public void testSerial() {
+    public void test() {
         CreateTestMatrix createMatrix = new CreateTestMatrix();
-        ComputingMatrix computingMatrix = new ParallelComputing_V1();
+        int[][] matrixA = createMatrix.create(12, 100);
+        int[][] matrixB = createMatrix.create(100, 6);
+
+        ComputingMatrix computingMatrix = new SerialComputing();
         MatrixMultiply matrixMultiply = new
-                MatrixMultiply(createMatrix.create(300, 300), createMatrix.create(300, 500), computingMatrix);
+                MatrixMultiply(matrixA, matrixB, computingMatrix);
         matrixMultiply.multiply();
+        System.out.println("++++++++++++++++++++++++");
+
+        ComputingMatrix computingMatrix2 = new ParallelComputing_CoreNum();
+        MatrixMultiply matrixMultiply2 = new
+                MatrixMultiply(matrixA, matrixB, computingMatrix2);
+        matrixMultiply2.multiply();
     }
 }
