@@ -16,6 +16,13 @@ public class ParallelComputing_CoreNum implements ComputingMatrix {
             thread.start();
             threads.add(thread);
         }
+        for (Thread thread: threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         System.out.println(" the execution time of ParallelComputing_CoreNum version ");
     }
 }

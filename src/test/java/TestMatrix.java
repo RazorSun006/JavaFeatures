@@ -6,8 +6,8 @@ public class TestMatrix {
     @Test
     public void test() {
         CreateTestMatrix createMatrix = new CreateTestMatrix();
-        int[][] matrixA = createMatrix.create(12, 100);
-        int[][] matrixB = createMatrix.create(100, 6);
+        int[][] matrixA = createMatrix.create(120, 600000);
+        int[][] matrixB = createMatrix.create(600000, 60);
 
         ComputingMatrix computingMatrix = new SerialComputing();
         MatrixMultiply matrixMultiply = new
