@@ -1,4 +1,4 @@
-import Concurrency.MatrixMultiply.MatrixMultiplySerial;
+import Concurrency.MatrixMultiply.MatrixMultiply;
 import Util.CreateTestMatrix;
 import org.testng.annotations.Test;
 
@@ -6,9 +6,14 @@ public class TestMatrix {
     @Test
     public void testSerial() {
         CreateTestMatrix createMatrix = new CreateTestMatrix();
-        MatrixMultiplySerial matrixMultiplySerial = new MatrixMultiplySerial();
+        MatrixMultiply matrixMultiply = new MatrixMultiply(createMatrix.create(3, 3), createMatrix.create(3, 5));
+        matrixMultiply.multiply();
+    }
 
-        matrixMultiplySerial.multiply(createMatrix.create(1000, 1000), createMatrix.create(1000, 1000));
+    @Test
+    public void testParallel_v1() {
+        CreateTestMatrix createMatrix = new CreateTestMatrix();
+
 
     }
 }

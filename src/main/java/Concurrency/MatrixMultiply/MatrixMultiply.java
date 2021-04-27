@@ -1,17 +1,29 @@
 package Concurrency.MatrixMultiply;
 
-public class MatrixMultiplySerial {
+public class MatrixMultiply implements Runnable {
+    int[][] matrixA;
+    int[][] matrixB;
+    int rowA;
+    int columnA;
+    int rowB;
+    int columnB;
 
-    public MatrixMultiplySerial() {
 
+    public MatrixMultiply(int[][] matrixA, int[][] matrixB) {
+        this.matrixA = matrixA;
+        this.matrixB = matrixB;
+        this.rowA = matrixA.length;
+        this.columnA = matrixA[0].length;
+        this.rowB = matrixB.length;
+        this.columnB = matrixB[0].length;
     }
 
-    public void multiply(int[][] matrixA, int[][] matrixB) {
+    public void multiply() {
+        display(matrixA);
+        System.out.println();
+        display(matrixB);
+        System.out.println();
         long startTime = System.nanoTime();
-        int rowA = matrixA.length;
-        int columnA = matrixA[0].length;
-        int rowB = matrixB.length;
-        int columnB = matrixB[0].length;
         if (columnA != rowB) {
             return;
         }
@@ -26,8 +38,9 @@ public class MatrixMultiplySerial {
         long endTime = System.nanoTime();
         System.out.println(" the execution time of serial version ");
         System.out.println(endTime - startTime + " ns ");
+        System.out.println((endTime - startTime) / (1000 * 1000) + " s ");
         System.out.println();
-      /*  display(result);*/
+          display(result);
     }
 
     private void display(int[][] result) {
@@ -37,5 +50,10 @@ public class MatrixMultiplySerial {
             }
             System.out.println();
         }
+    }
+
+    @Override
+    public void run() {
+
     }
 }
