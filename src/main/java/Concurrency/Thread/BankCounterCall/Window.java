@@ -1,7 +1,5 @@
 package Concurrency.Thread.BankCounterCall;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 public class Window extends Thread {
     private final String name;
     private static final int MAX = 50;

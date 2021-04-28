@@ -1,4 +1,5 @@
 import Concurrency.Thread.BankCounterCall.Window;
+import Concurrency.Thread.Fly;
 import org.testng.annotations.Test;
 
 public class TestThread {
@@ -11,5 +12,9 @@ public class TestThread {
         window1.start();
         window2.start();
         window3.start();
+
+        Fly fly = new Fly();
+        Thread thread = new Thread(fly);
+        thread.start();
     }
 }
