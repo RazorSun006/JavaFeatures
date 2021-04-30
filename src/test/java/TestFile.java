@@ -13,5 +13,6 @@ public class TestFile {
         String fileName = "006.jpg";
         Result result = new Result();
         searchFiles(file, fileName, result);
+        System.out.println("test name change for github");
     }
 }
