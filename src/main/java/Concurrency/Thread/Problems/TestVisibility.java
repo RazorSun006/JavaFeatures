@@ -1,4 +1,4 @@
-package Concurrency.Thread.Problems.Visibility;
+package Concurrency.Thread.Problems;
 
 public class TestVisibility {
     private static boolean flag = true;
