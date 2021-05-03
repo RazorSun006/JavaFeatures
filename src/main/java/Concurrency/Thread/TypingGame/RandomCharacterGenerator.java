@@ -22,12 +22,12 @@ public class RandomCharacterGenerator extends Thread implements CharacterSource 
         return (int) (Math.max(1000, 5000 * random.nextDouble()));
     }
 
-    public void addCharacterListener(CharacterListener cl) {
-        handler.addCharacterListener(cl);
+    public void addCharacterListener(CharacterListener characterListener) {
+        handler.addCharacterListener(characterListener);
     }
 
-    public void removeCharacterListener(CharacterListener cl) {
-        handler.removeCharacterListener(cl);
+    public void removeCharacterListener(CharacterListener characterListener) {
+        handler.removeCharacterListener(characterListener);
     }
 
     public void nextCharacter() {
@@ -36,7 +36,7 @@ public class RandomCharacterGenerator extends Thread implements CharacterSource 
     }
 
     public void run() {
-        for (; ; ) {
+        while (true) {
             nextCharacter();
             try {
                 Thread.sleep(getPauseTime());
