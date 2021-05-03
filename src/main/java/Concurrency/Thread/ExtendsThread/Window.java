@@ -1,4 +1,4 @@
-package Concurrency.Thread.BankCounterCall;
+package Concurrency.Thread.ExtendsThread;
 
 public class Window extends Thread {
     private final String name;

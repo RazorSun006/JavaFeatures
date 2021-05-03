@@ -1,5 +1,4 @@
-import Concurrency.Thread.BankCounterCall.Window;
-import Concurrency.Thread.Fly;
+import Concurrency.Thread.ExtendsThread.Window;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -23,9 +22,5 @@ public class TestThread {
             thread.join();
         }
 
-
-      /*  Fly fly = new Fly();
-        Thread thread = new Thread(fly);
-        thread.start();*/
     }
 }

@@ -1,4 +1,4 @@
-package Concurrency.Thread;
+package Concurrency.Thread.RunnableThread;
 
 public class FundamentalThread {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Concurrency.Thread;
+package Concurrency.Thread.RunnableThread;
 
 public class Fly implements Runnable {
     @Override
