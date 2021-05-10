@@ -13,7 +13,6 @@ public class TestStateMachine {
     public static void main(String[] args) {
         Automaton automaton = new Automaton();
        String list = automaton.table.get("start")[2];
-
     }
 
 }
