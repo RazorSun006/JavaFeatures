@@ -4,13 +4,13 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+
 public class GXML {
     String name;
     String sex;
     String usage;
 
-    @XmlElement
+
     public String getName() {
         return name;
     }
@@ -19,7 +19,7 @@ public class GXML {
         this.name = name;
     }
 
-    @XmlElement
+
     public String getSex() {
         return sex;
     }
@@ -28,7 +28,7 @@ public class GXML {
         this.sex = sex;
     }
 
-    @XmlElement
+
     public String getUsage() {
         return usage;
     }
