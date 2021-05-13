@@ -14,7 +14,7 @@ public class Demo1 {
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
-        Employee employee = sqlSession.selectOne("Mybatis.Employee.selectEmp", 1);
-
+        Employee employee = sqlSession.selectOne("Employee.selectEmp", 1);
+        System.out.println(employee.toString());
     }
 }
